@@ -10,6 +10,33 @@
     font-size: large;
     font-weight: 600;
 }
+.name {
+  font-weight: bold;
+  letter-spacing: normal;
+  
+  background: linear-gradient(
+    45deg,
+    goldenrod 0%,
+    white 20%,
+    goldenrod 40%
+  );
+
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% -200%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
 .leftHeader{
        display: flex;
     justify-content: center;
@@ -40,4 +67,10 @@
    display: flex;
     justify-content: center;
     align-items: center;
+}
+.shoutout strong{
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5a2cff;
 }

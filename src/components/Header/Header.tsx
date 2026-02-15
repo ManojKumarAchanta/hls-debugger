@@ -14,7 +14,9 @@ const Header = () => {
             </div>
         </div>
         <div className={Styles.rightHeader}>
-            
+            <div className={Styles.shoutout}>
+            <strong className={Styles.personalBrand}>Made with <span style={{color: "#e25555", fontSize: "14px"}}>❤</span> by <span className={Styles.name}>{"Manoj Kumar Achanta"}</span></strong>
+            </div>
         </div>
     </header>
   )
