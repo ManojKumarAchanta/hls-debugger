@@ -6,7 +6,7 @@ const DropDown = (props: any) => {
     const { options = [], onSelect = () => {}, selectedOption } = props;
 
     // normalize options to objects
-    const normalized: { label: string; value: string }[] = options.map((opt: OptionLike, idx: number) => {
+    const normalized: { label: string; value: string }[] = options.map((opt: OptionLike) => {
         if (typeof opt === "string") return { label: opt, value: opt };
         return { label: opt.label, value: opt.value };
     });
