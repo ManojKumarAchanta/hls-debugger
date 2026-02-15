@@ -111,7 +111,7 @@ const VideoPlayer = () => {
         player.play().then(() => { dispatch("SET_STATUS", "playing"); dispatch("ADD_LOG", { level: 'info', message: 'Playback started' }); }).catch(() => {});
       });
 
-      hls.on(Hls.Events.LEVEL_SWITCHED, (_ev, data) => {
+      hls.on(Hls.Events.LEVEL_SWITCHED, (_ev) => {
         try {
           const lvl = hls.currentLevel;
           const levelInfo = hls.levels?.[lvl];
