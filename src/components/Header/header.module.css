@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    align-items: center;
+    background-color: #0f172a;
+    color: white;
+    border-bottom: solid 1px #1e293b;
+    padding: 14px 32px;
+}
+.heading{
+    font-size: large;
+    font-weight: 600;
+}
+.leftHeader{
+       display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background-color: rgba(33, 150, 243, 0.2);
+    border-radius: 6px;
+}
+.iconContainer svg{
+    width: 28px;
+    height: 28px;
+    color: #50a2ff;
+}
+.subtitle{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #62748E;
+    font-size: small;
+}
+.rightHeader{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}

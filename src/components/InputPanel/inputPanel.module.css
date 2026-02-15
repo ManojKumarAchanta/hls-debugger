@@ -1,0 +1,53 @@
+.inputPanelContainer {
+    display: flex;
+    background-color: #0f172a;
+    grid-area: inputPanelContainer;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 1.3rem;
+    border-radius: 8px;
+    gap: 12px;
+}
+.inputContainer{
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+.inputHeading{
+    color: #83858b;
+    font-size: medium;
+    display: flex;
+    width: 100%;
+}
+#inputField:focus{
+    outline: none;
+    border-color: #4c5158;
+}
+#inputField {
+    padding: .5rem .8rem;
+    flex: 8;
+    font-size: medium;
+    border-radius: 0.25rem;
+    border: solid 1px #314158;
+    display: flex;
+    background-color: #1e293b;
+    color: #f8f8f8;
+}
+.inputField::placeholder {
+    color: #716569;
+}
+.loadButton {
+    flex: .7;
+    border: none;
+    cursor: pointer;
+    text-wrap-mode: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;    padding: .5rem .8rem;
+
+    gap: 6px;
+    border-radius: 6px;
+    font-size: small;
+    background-color: #030213;
+    color: white;
+}

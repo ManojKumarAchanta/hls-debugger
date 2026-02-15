@@ -1,0 +1,146 @@
+/* videoPlayer.module.css */
+
+.videoPlayerContainer {
+  grid-area: videoPlayerContainer;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #0f172a;
+  border-radius: 8px;
+  /* ✅ FIX: overflow:hidden was clipping the control bar — use clip instead */
+  overflow: visible;
+  /* Keep rounded corners without clipping children */
+  isolation: isolate;
+}
+
+/* The div that containerRef points to */
+.playerContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  /* ✅ Must NOT be overflow:hidden — that clips the control bar */
+  overflow: visible;
+}
+
+/* Force the Video.js root element to fill the container */
+.playerContainer :global(.video-js) {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding-top: 0 !important;
+  /* ✅ Controls need z-index to appear above the video layer */
+  z-index: 0;
+}
+
+/* Plyr: ensure the player fills the container */
+.playerContainer :global(.plyr) {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+}
+
+.playerContainer :global(.plyr__video-wrapper) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Inner <video> element */
+.playerContainer :global(.video-js video) {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  background: black;
+}
+
+/* ✅ Control bar — ensure it's visible and above the video */
+.playerContainer :global(.video-js .vjs-control-bar) {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  /* Prevent control bar from being clipped by border-radius */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* ✅ Big play button — center it properly */
+.playerContainer :global(.video-js .vjs-big-play-button) {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10 !important;
+  margin: 0 !important;
+}
+
+/* ── Overlay shown before a stream is loaded ─────────────────────────── */
+.previewOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.previewOverlay span {
+  color: #888b94;
+  font-size: medium;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.previewOverlay span svg {
+  width: 72px;
+  height: 72px;
+}
+
+.previewOverlayIcon {
+  display: flex;
+}
+
+.previewOverlayText {
+  color: #888b94;
+  font-size: 14px;
+}
+
+/* Custom controls overlay (used instead of Video.js controls) */
+.customControls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 20;
+}
+.controlButton{
+  background: rgba(255,255,255,0.95);
+  border: none;
+  color: #07203a;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.volumeControl{
+  width: 100px;
+}
+.seekBar{
+  flex: 1 1 auto;
+}
